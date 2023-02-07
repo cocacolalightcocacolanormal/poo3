@@ -36,6 +36,7 @@ class NPC:
         self.nom: str
         self.profession: str
         self.vie = ptvie()
+        self.classearmure = lancer_de()
 
     def attributs(self):
         print('force:', self.force, "agilité:", self.agilite, "constitution:", self.constitution, "intelligence:",
@@ -56,15 +57,40 @@ class kobold(NPC):
 
 
     def subir_dommage(self, nombredommagesubis):
-        return
+        self.vie = self.vie - nombredommagesubis
+        
+        elif nombredommagesubis > self.classearmure:
+            self.vie = self.vie - random.randit(1,6)
+
+        elif attaque < self.classearmure:
+self.vie = self.vie - 0
+
+       
+        
+
+
+
 
 
 class hero(NPC):
     def __init__(self):
         super().__init__()
-
+        
+        
+    
 
     def attaquer(self, cible):
+        if attaque = 20:
+            cible.subir_dommage(random.randit(1, 8))
+            
+        elif attaque = 1:
+            print("attaque ratée")
+            
+        
+            
+        
+
+        
 
 
 
@@ -82,3 +108,4 @@ class hero(NPC):
 #S’il obtient un nombre entre 2 et 19, il doit vérifier s’il le nombre obtenu est plus grand ou égal à la classe d’armure du monstre
 #Si oui, il réussit à toucher l'adversaire et ce dernier subit un d6 de dommage
 #Si non, le coup n’a pas fonctionné
+
