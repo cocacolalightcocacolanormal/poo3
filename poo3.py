@@ -42,70 +42,44 @@ class NPC:
         print('force:', self.force, "agilité:", self.agilite, "constitution:", self.constitution, "intelligence:",
               self.intelligence, "sagesse:", self.sagesse, "charisme:", self.charisme, "vie", self.vie)
 
-
+#POO 3 
 attaque = random.randit(1, 20)
 
-
+#On crée la classe de monstre (kobold) 
 class kobold(NPC):
-
+#on transfert toutes les caractéristiques de la classe NPC à la classe de ce monstre
     def __init__(self):
         super().__init__()
-
-
+#on crée la fonction d'attaquer
     def attaquer(self, cible):
         return
-
-
+# on crée une fonction pour subir des dommages. On reçoit le nombre de dommages subis lors d'une attaque 
+#critique, déterminée dans la fonction "attaquer" dans notre class héros. Si la variable attaquer est supérieur
+#à la classe d'armure du monstre, le monstre reçoit un d6 de dommage. Si la variable est inférieur à la classe d'armure,
+#l'attaque fait 0 dégats (ratée)
     def subir_dommage(self, nombredommagesubis):
         self.vie = self.vie - nombredommagesubis
-        
-        elif nombredommagesubis > self.classearmure:
-            self.vie = self.vie - random.randit(1,6)
+
+        if attaque => self.classearmure:
+            self.vie = self.vie - random.randit(1, 6)
 
         elif attaque < self.classearmure:
-self.vie = self.vie - 0
-
-       
+            self.vie = self.vie - 0
         
 
-
-
-
-
+#pour notre class héros, on transfert les mêmes caractéristiques dans la classe NPC.
 class hero(NPC):
     def __init__(self):
         super().__init__()
-        
-        
-    
-
+#on crée une fonction attaquer pour l'héros aussi. Ici, on écrit que si la variable "attaquer" est égal à 20, 
+    # le monstre recevra des dommages d'un d8 (attaque critique). Si la variable est égal à 1, l'attaque est ratée
     def attaquer(self, cible):
         if attaque = 20:
             cible.subir_dommage(random.randit(1, 8))
-            
+
         elif attaque = 1:
             print("attaque ratée")
-            
-        
-            
-        
-
-        
-
-
-
 
     def subir_dommage(self, nombredommagesubis):
         return
-
-
-
-#Voici comment on fait une attaque:
-#le héros lance un dé à 20 faces (d20):
-#S’il obtient un 20, c’est une attaque critique
-#On réussit à toucher l’adversaire peu importe sa classe d’armure. Le monstre subit alors un d8 de dommage.
-#S’il obtient un 1, c’est une attaque ratée
-#S’il obtient un nombre entre 2 et 19, il doit vérifier s’il le nombre obtenu est plus grand ou égal à la classe d’armure du monstre
-#Si oui, il réussit à toucher l'adversaire et ce dernier subit un d6 de dommage
-#Si non, le coup n’a pas fonctionné
 
